@@ -776,7 +776,7 @@ Support:
 		splashID: '#jpreContent',
 		showSplash: true,
 		showPercentage: true,
-		debugMode: false,
+		debugMode: true,
 		splashFunction: function() {}
 	}
 	
