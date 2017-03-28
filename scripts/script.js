@@ -1218,11 +1218,19 @@ $.fn.hoverThumb = function() {
 
 		});	 
 
-		// once the mouse leaves the whole thumbs div
+		// once the mouse leaves the whole thumbs div of development section
 		$('#thumbs').mouseleave(function(e){
 
 			// we reset the thumbs 
 			$('#thumbs li').stop().animate({'opacity':'1'}, 500);
+
+		});
+		
+		// once the mouse leaves the whole thumbs div of installation art section
+		$('#fix #thumbs').mouseleave(function(e){
+
+			// we reset the thumbs 
+			$('#fix #thumbs li').stop().animate({'opacity':'1'}, 500);
 
 		});	
 
