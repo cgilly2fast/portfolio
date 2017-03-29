@@ -189,11 +189,11 @@ img.emoji {
 				<h2>The project</h2>	
 				<p>For this project I created a <a href="./hash/TextAssociator.java">TextAssociator.java</a>, which maintains word associations as a built-from-scratch HashTable of WordInfo objects. My final implementation is a self-resizing, non-generic HashTable, using separate chaining to handle collision resolution. In order to complete this project, I needed to answer 3 basic design decisions:</p>
 				<ul class='ul'>
-					<li>What should the starting capacity of your TextAssociator be?</li>
-					<li>At what load factor should you expand your internal capacity? </li>
-					<li>What should the new size of your array be?</li>
+					<li>What should the starting capacity of the TextAssociator be?</li>
+					<li>At what load factor should the TextAssociator expand its internal capacity? </li>
+					<li>What should the new size of the array be?</li>
 				</ul>
-				<p>Firstly I wanted the initial size to handle most “small” jobs, so I decided on the prime number 101. When the table reaches a load factor of .5 the table resizes to double its size. I chose these numbers to amortize me runtime effectively. We were also asked to make a decision on a hash function. I choose to uses Java has function for strings which aloud me more freedom while hashing than hashing the actual WordInfo objects</p>
+				<p>Firstly I wanted the initial size to handle most “small” jobs. So I decided on the prime number 101, for my initial size. When the table reaches a load factor of .5 the table resizes to double its size. I chose these numbers to amortize my runtime effectively. We were also asked to make a decision on the hash function we implement. I chose to use Java’s hash function for strings. Which aloud me more freedom while hashing, as apposed to hashing the actual WordInfo objects.</p>
 			</div>
 		</div>
 	</div>
