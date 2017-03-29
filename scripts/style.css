@@ -1037,7 +1037,6 @@ img.shadow {
   /* Show the 3rd item at the bottom of the page */
 }
 .thumbs li {
-  opacity: 0.4;
   float: none;
   margin: 0 0 1.5em 0;
   background: #FFF;
