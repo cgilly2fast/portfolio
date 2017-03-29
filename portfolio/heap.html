@@ -189,7 +189,7 @@ img.emoji {
 				<h2>The process</h2>	
 				<p>My three-heap is a min heap like a binary heap, except that each element in the tree structure can have up to three children instead of 2 children. The challenge for this assignment was to maintain the structure property and the order property of heaps.</p>
 				<p>I implemented my <a href="./heap/ThreeHeap.java">ThreeHeap.java</a> as an array. The bench mark for the buildQueue operation was to run in, at slowest O(NLogN) time asymptotically. Although extra points were given for implementing buildQueue in O(N) time. I opted for the extra points, using Floyds Algorithm for achieving the O(N) runtime.</p>
-				<p>My implementation also grows and shrinks as the number of contents changes. To amortize this cost I resize the array by twice its previous size when full, and shrink by half when the array is 25% full.</p>
+				<p>My implementation also grows and shrinks as the number of contents changes. To amortize this cost I resize the array by twice its previous size when full, and shrink the size by half when the array is 25% full.</p>
 			</div>
 		</div>
 	</div>
