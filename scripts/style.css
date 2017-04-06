@@ -2213,7 +2213,7 @@ button:active,
   header nav {
     font-size: 18px;
     font-size: 1.8rem;
-    margin-right: 10%;
+    margin-right: 27%;
   }
   .social {
     display: block;
@@ -2251,7 +2251,7 @@ button:active,
   footer nav {
     display: block;
     float: left;
-    margin-left: 100px;
+    margin-left: 256px;
   }
   footer nav ul {
     list-style: none;
@@ -2442,10 +2442,10 @@ button:active,
     margin-left: 0;
   }
   header nav {
-    margin-right: 28%;
+    margin-right: 27%;
   }
   footer nav {
-    margin-left: 270px;
+    margin-left: 256px;
   }
   p {
     line-height: 1.6em;
