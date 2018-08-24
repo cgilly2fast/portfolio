@@ -62,6 +62,11 @@
 					<a id="logo" class="logo" href="http://www.colbygilbert.com/about.html">Colby Gilbert</a>
 					<div class="icon-nav">navigation</div>
 					<ul class="social">
+						<li class="email">
+							<span id="email-tooltip" tooltip="Click to copy my email address to your clipboard 😀">
+								<a id="email" data-clipboard-text="colbygilbert95@gmail.com">email</a>
+							</span>
+						</li>
 						<li class="facebook">
 							<a href="https://www.facebook.com/colby.gilbert.9" title="Like me on Facebook" target="_blank">facebook</a>
 						</li>
@@ -213,8 +218,8 @@
 	</script>
 	<script type="text/javascript" src="http://www.colbygilbert.com/scripts/scripts.js"></script>
 	<script type="text/javascript" src="http://www.colbygilbert.com/scripts/wp-embed.min.js"></script>
-
 	<script src="http://www.colbygilbert.com/scripts/jquery.min(1).js"></script> 
+	<script src="http://www.colbygilbert.com/scripts/clipboard.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script> 
 	<script src="http://www.colbygilbert.com/scripts/script.js"></script>
 	<script type="text/javascript">
@@ -262,6 +267,30 @@
 			}, function() {	
 				//Show the page once images are loaded	
 							animatePage();
+			});
+
+			// Copy email address to clipboard
+			var clipboard = new ClipboardJS('#email');
+
+			clipboard.on('success', function(e) {
+			    $('#email-tooltip').attr("tooltip", "Yay! My email address has been copied to your clipboard ✅");
+			    $('#email-tooltip').addClass('success');
+
+			    // Reset
+			    $('#email-tooltip').mouseleave(function() {
+
+				    setTimeout( function(){
+						$('#email-tooltip').attr("tooltip", "Click to copy my email address to your clipboard 😀");
+				    	$('#email-tooltip').removeClass('success');
+					}, 300);
+				});
+
+			    e.clearSelection();
+			});
+
+			clipboard.on('error', function(e) {
+			    $('#email-tooltip').attr("tooltip", "Sorry, there was a technical glitch. Please try again.");
+			    $('#email-tooltip').toggleClass('fail');
 			});
 		});
 	</script>
