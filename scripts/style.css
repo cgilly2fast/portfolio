@@ -2317,6 +2317,9 @@ button:active,
   .social .linkedin a {
     background-position: -96px -186px;
   }
+  .social .email a {
+  background-position: -11px -757px;
+ }
   footer nav {
     display: block;
     float: left;
@@ -2511,10 +2514,10 @@ button:active,
     margin-left: 0;
   }
   header nav {
-    margin-right: 27%;
+    margin-right: 3.5%;
   }
   footer nav {
-    margin-left: 256px;
+    margin-left: 296px;
   }
   p {
     line-height: 1.6em;
