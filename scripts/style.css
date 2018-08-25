@@ -2319,7 +2319,11 @@ button:active,
   }
   .social .email a {
   background-position: -11px -757px;
- }
+  }
+  .social .github a {
+  background-position: 1px -791px;
+  }
+
   footer nav {
     display: block;
     float: left;
