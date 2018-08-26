@@ -1218,21 +1218,29 @@ $.fn.hoverThumb = function() {
 
 		});	 
 
-		// once the mouse leaves the whole thumbs div of development section
-		$('#thumbs').mouseleave(function(e){
+		// once the mouse leaves the whole thumbs div of project section
+		$('#personal #thumbs').mouseleave(function(e){
 
 			// we reset the thumbs 
 			$('#thumbs li').stop().animate({'opacity':'1'}, 500);
 
 		});
 		
-		// once the mouse leaves the whole thumbs div of installation art section
-		$('#fix #thumbs').mouseleave(function(e){
+		// once the mouse leaves the whole thumbs div of  art section
+		$('#art #thumbs').mouseleave(function(e){
 
 			// we reset the thumbs 
-			$('#fix #thumbs li').stop().animate({'opacity':'1'}, 500);
+			$('#art #thumbs li').stop().animate({'opacity':'1'}, 500);
 
 		});	
+
+		// once the mouse leaves the whole thumbs div of  art section
+		$('#cs #thumbs').mouseleave(function(e){
+
+			// we reset the thumbs 
+			$('#cs #thumbs li').stop().animate({'opacity':'1'}, 500);
+
+		});
 
 	}
 };		
