@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html class="js" lang="en">
+	<head>
+		<title>Bitcoin Trading Bot - AWS Bot</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta property="og:title" content="Art/Development Portfolio of Colby Gilbert">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="http://www.colbygilbert.com">
+
+		<!-- http://t.co/dKP3o1e -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="fb:app_id" content="381830641890866">
+
+		<!-- For all browsers -->
+		<link rel="stylesheet" type="text/css" href="http://www.colbygilbert.com/scripts/style.css">
+
+		<!-- JavaScript -->
+		<script async="" src="http://www.colbygilbert.com/scripts/analytics.js"></script><script id="facebook-jssdk" src="http://www.colbygilbert.com/scripts/sdk.js"></script><script src="http://www.colbygilbert.com/scripts/modernizr-2.5.3-min.js"></script>
+		
+		<!-- For everything else -->
+		<link rel="shortcut icon" href="http://www.colbygilbert.com/favicon.jpg">
+		<meta http-equiv="cleartype" content="on">
+		<script type="text/javascript">
+	      // Eliminate FOUC
+	      document.documentElement.className = 'js';
+	    </script>
+		<meta name="description" content="Behind the scenes look at how I created my trading bot.">
+		<meta name="robots" content="noodp">
+		<link rel="canonical" href="http://www.colbygilbert.com/portfolio/bot.html">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Bitcoin Trading Bot - Bot">
+		<meta property="og:description" content="Behind the scenes look at how I created this installation.">
+		<meta property="og:url" content="http://www.colbygilbert.com/portfolio/bot.html">
+		<meta property="og:site_name" content="Colby Gilbert">
+		<script src="http://www.colbygilbert.com/scripts/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+			img.wp-smiley,
+			img.emoji {
+				display: inline !important;
+				border: none !important;
+				box-shadow: none !important;
+				height: 1em !important;
+				width: 1em !important;
+				margin: 0 .07em !important;
+				vertical-align: -0.1em !important;
+				background: none !important;
+				padding: 0 !important;
+			}
+		</style>
+		<link rel="stylesheet" id="contact-form-7-css" href="http://www.colbygilbert.com/scripts/styles.css" type="text/css" media="all">
+		<script type="text/javascript" src="http://www.colbygilbert.com/scripts/jquery.min.js"></script>
+		<style type="text/css" id="syntaxhighlighteranchor"></style>
+	</head>
+
+	<body class="clearfix">
+		<header id="header">
+			<div class="row">
+				<div class="col-12">
+					<a id="logo" class="logo" href="http://www.colbygilbert.com/about.html">Colby Gilbert</a>
+					<div class="icon-nav">navigation</div>
+					<ul class="social">
+						<li class="email">
+							<span id="email-tooltip" tooltip="Click to copy my email address to your clipboard 😀">
+								<a id="email" data-clipboard-text="colbygilbert95@gmail.com">email</a>
+							</span>
+						</li>
+						<li class="facebook">
+							<a href="https://www.facebook.com/colby.gilbert.9" title="Like me on Facebook" target="_blank">facebook</a>
+						</li>
+						<li class="linkedin">
+							<a href="https://www.linkedin.com/in/colbygilbert95/" title="Connect with me on Linkedin" target="_blank">linkedin</a>
+						</li>
+						<li class="github">
+							<a href="https://github.com/colbygilbert95" title="Connect with me on GitHub" target="_blank">github</a>
+						</li>
+					</ul>
+					<nav>
+						<ul id="nav" class="portfolio">
+							<li class="page_item page-item-2">
+								<a href="http://www.colbygilbert.com/about.html">about</a>
+							</li>
+							<li class="page_item page-item-3">
+								<a href="http://www.colbygilbert.com/portfolio.html">portfolio</a>
+							</li>
+							<!-- <li class="page_item page-item-11">
+								<a href="http://www.colbygilbert.com/contact.html">contact</a>
+							</li> -->
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>  
+	  
+		<div class="content portfolio clearfix">
+			<section class="main nopad-b">
+				<div class="row">
+					<div id="text-main" class="col-5 text-main">
+						<h1>Bitcoin Trading Bot</h1>
+						<p class="author">AWS Bot<span class="date">June 2018</span></p>
+						<p>I started this project in the midst of bitcoin's height in late 2017. My idea to make this bot was born out my troubled attempts to day trade.</p>
+					</div>
+					<div id="img-main" class="col-7 align-c"><img class="major preload" src="./bot/images/main.jpg" alt="front view of bookshelf"></div>
+				</div>
+			</section>
+
+			<div id="content-detail" class="content-detail">
+				<section class="dark">
+					<div class="row">
+						<div class="col-12">
+							<div class="text-center nomargin">
+								<h2>Genesis</h2>	
+								<p>After making a bunch of mistake in my first few bitcoin trades, I realized if I had a bitcoin trading bot I could set up the trade rules and walk away. No matter what happens that bot will follow my rules. Automating the process and factoring out the human prone to making irrational decisions in the heat of the moment.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="light">
+					<div class="row">
+						<div class="col-12">
+							<div class="text-center nomargin">
+								<h2>Preplanning</h2>	
+								<p>To simplify matters I choose to initially develop the bot to exclusively trade BTC-USD on Gdax/Coinbase. This was beneficial because Coinbase has a well-defined and robust API. They also have a lesser know but powerful library called the Gdax Trading Toolkit, which I have contributed too.  My long-term plan is to move to more exchanges with more coin pairings.</p>
+								<p>My initial sizing up of what features I need for the project were as follows:</p>
+								<ul class='ul'>
+									<li>Real time market data</li>
+									<li>Real time calculation of technical indicator values</li>
+									<li>Ability to know when my trades have been accepted</li>
+									<li>Tracking trade data for accounting and analysis purposes</li>
+									<li>Initialization process to ensure the bot is in sync with market data</li>
+									<li>Fail safes to handle errors and stop to prevent losing money from a fatality program</li>
+								</ul>
+								<p>The list felt quite daunting at first but I knew, like with any lofty project, I just needed to start and I will figure out the rest as I go. The three key challenge that arose as I developed where creating technical indicators, designing my database, and back testing my trading strategy. I discuss these in detail below.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="dark">
+					<div class="row">
+						<div class="col-12 align-c">
+							<img src="./mothersMilk/images/design-thinking-diagram.jpg" alt="hung bookshelf">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="text-center">
+								<h2>Technical Indicators</h2>
+								<p>I choose to start the project by creating the technical indicators. I knew wanted the MACD (Moving Average Convergence Divergence), CCI (Commodity Channel Index), and RSI (Relative Strength Index). Calculating these also require the SMA (Simple Moving Average) and EMA (Exponential Moving Average) for my trading strategy.</p> 
+								<p>I looked all over GitHub for a library that already had these built out in JavaScript but to no avail. After completing a few of them, I then found this technical indicator library (link). I somehow missed the exact type of library I was looking for two months prior. Although my version was optimized to my needs, I chose to switch to the new library. The new library had many features and 30+ indicators already built to be used immediately. I recognized this would minimize my future development cost when I wanted to add a new unforeseen feature.</p>
+								<p>Once I had a solid set of indicators to work with and expansive set of tools for making bots I was able to get a workable draft down quite quickly. This phase of the project forced me to learn NodeJS and Typescript.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="light">
+					<div class="row">
+						<div class="col-12">
+							<div class="text-center">
+								<h2>Database Design</h2>
+								<p>The bot required a database to handle on the storage of trade data, historical data and Indicator values. I wrote up a schema for my database and meet up with a previous professor for review. He helped me figure out some implementation issue I was struggling with. First he recommends I remove all table that store indicator technical indicator values.</p> 
+								<p>He showed me if had a longer initialization process I could remove the waste of multiples table per indicator. Simplify the indicator table to one table that contained BTC-USD historical data. The second implementation issue the helped me solve is which DBMS I should use. I was undecided about using SQLite or a bigger DB like Azure. After eliminating my redundant tables, SQLite was the clear winner due to its ease of use and compatibility to a bot written in NodeJS. Here is my schema before our meeting and the schema that was implemented.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="dark">
+					<div class="row">
+						<div class="col-12">
+							<div class="text-center nomargin">
+								<h2>Back Testing</h2>	
+								<p>The final challenge was defining my winning trading strategy. At this point I tracked down historical data for bitcoin on Coinbase (2014 - Jan 2018) and created a SQLite table with the data (schema in link above). I then ran copious back tests and then saved the results in a different SQLite table for better analytics and tracking of results. Based on previous price action I wanted to optimize these key categories:</p>
+								<ul class='ul'>
+									<li>Time to exit a trade</li>
+									<li>What paring of indicator values yielded the highest results (on avg)</li>
+									<li>How to minimize losses when a trade goes against me</li>
+									<li>How to maximize the upside of a winning trade</li>
+								</ul>
+								<p>Then by changing the back test window, I tested how these changed based on different market conditions. Running one back test took about 5 minutes to complete because I usually ran tests on eight-month periods. Eight months of one-minute OHLC (Open High Low Close) candles is 20,736,000 data points. For each data point I calculated new indicator values and tested whether I would be entering, exiting or waiting for a trade opportunity, while tracking profitability. Below is a snapshot of the results I would get from a single test and how I compared the result across each test.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="light">
+					<div class="row">
+						<div class="col-12">
+							<div class="text-center">
+								<h2>Conclusion</h2>
+								<p>Although I have come up with a solid strategy for markets with a volatility of 4.5% or higher the current market is quite flat for day trading. So I have sideline the crypto bot and moved to making longer term three to six trades. Alas I have the code ready to go when the market becomes more bullish. Take a look at my code for everything on my GitHub.</p> 
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="dark">
+					<div id="next" class="sprite next">
+						<a href="./box.html" rel="prev">Matuto</a>
+					</div>			
+					<div id="prev" class="sprite prev">
+						<a href="./medcenter.html" rel="next">UW Medical Center</a>
+					</div>					
+					<div class="row">
+						<div class="col-12">
+							<div class="header-center">
+								<h3>More from my portfolio</h3>
+							</div>
+							<ul id="thumbs" class="thumbs clearfix">
+								<li>
+									<a href="./lifesbistro.html">
+										<img src="./images/lifecover.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" sizes="(max-width: 628px) 100vw, 628px">
+										<div class="description">
+											<span class="arrow-r"></span>
+											<h4>Life's Bistro</h4>
+											<p>Art Installation</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="./medcenter.html">
+										<img src="./images/medcover.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" sizes="(max-width: 628px) 100vw, 628px">
+										<div class="description">
+											<span class="arrow-r"></span>
+											<h4>UW Medical Center Show</h4>
+											<p>Art Installation</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="./box.html">
+										<img src="./images/boxcover.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""  sizes="(max-width: 628px) 100vw, 628px">
+										<div class="description">
+											<span class="arrow-r"></span>
+											<h4>Out of the Box</h4>
+											<p>Sculpture</p>
+										</div>
+									</a>
+								</li>					 	
+							 </ul>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div><!-- / section -->
+	</body><!-- / content-detail -->
+
+	<!-- / content -->
+
+	<footer id="footer" role="contentinfo">
+		<div class="row">
+			<div class="col-12">
+				<div class="left">
+					<a class="transition" href="http://www.colbygilbert.com/about.html">2018 Colby Gilbert</a>
+				</div>
+				<nav id="nav-footer">
+					<ul>
+						<li class="page_item page-item-2">
+							<a href="http://www.colbygilbert.com/about.html">about</a>
+						</li>
+						<li class="page_item page-item-7">
+							<a href="http://www.colbygilbert.com/portfolio.html">portfolio</a>
+						</li>
+						<li class="page_item page-item-11">
+							<a href="./contact.html">contact</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="right">
+					<a href="https://www.instagram.com/cgilly2fast">Follow @CGilly2fast</a>	
+				</div>
+			</div>
+		</div>
+		<div class="gradient-white">
+			<a class="top" href="./box.html#top">back to top</a>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="http://www.colbygilbert.com/scripts/jquery.form.min.js"></script>
+	<script type="text/javascript">
+	var _wpcf7 = {"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}},"cached":"1"};
+	</script>
+	<script type="text/javascript" src="http://www.colbygilbert.com/scripts/scripts.js"></script>
+	<script type="text/javascript" src="http://www.colbygilbert.com/scripts/wp-embed.min.js"></script>
+	<script src="http://www.colbygilbert.com/scripts/jquery.min(1).js"></script> 
+	<script src="http://www.colbygilbert.com/scripts/clipboard.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script> 
+	<script src="http://www.colbygilbert.com/scripts/script.js"></script>
+	<script type="text/javascript">
+		//If browser is IE8 or older we show IE specific page
+		if(ie < 9){
+			ieMessage();
+		}
+
+		/*
+		* Call functions when dom is ready
+		*/
+		$(document).ready(function() {
+
+			// Hide browser top bar in mobiles
+			$('body').scrollTop(1);
+
+			// Toggle Navigation for mobile devices
+			$('.icon-nav').on('click', function(){
+				$('header nav').slideToggle();
+				$(this).toggleClass('active');
+			});
+
+			// Function to scroll to top
+			$('.top').click(function(){
+
+		        $('html, body').animate({scrollTop:0}, 1000, 'easeInOutQuad');
+		        return false;
+		    });
+
+			// Function to fade in image sprites
+		  	$('.sprite').fadeSprite();
+
+		    //Function for thumbnail hover effect
+		    $('.thumbs li').hoverThumb();
+
+			// Function to animate when leaving page
+			$('.transition, #nav a, #nav-footer a, #thumbs a, #next a, #prev a, #logo, #face a').leavePage();	
+			// Animate the header on first			
+			$('#header').stop().animate({'opacity': '1', 'top':'0'}, 1000);
+
+			// Preload the page with jPreLoader
+			$('body').jpreLoader({
+				showSplash: true
+			}, function() {	
+				//Show the page once images are loaded	
+							animatePage();	
+			});
+
+			// Copy email address to clipboard
+			var clipboard = new ClipboardJS('#email');
+
+			clipboard.on('success', function(e) {
+			    $('#email-tooltip').attr("tooltip", "Yay! My email address has been copied to your clipboard ✅");
+			    $('#email-tooltip').addClass('success');
+
+			    // Reset
+			    $('#email-tooltip').mouseleave(function() {
+
+				    setTimeout( function(){
+						$('#email-tooltip').attr("tooltip", "Click to copy my email address to your clipboard 😀");
+				    	$('#email-tooltip').removeClass('success');
+					}, 300);
+				});
+
+			    e.clearSelection();
+			});
+
+			clipboard.on('error', function(e) {
+			    $('#email-tooltip').attr("tooltip", "Sorry, there was a technical glitch. Please try again.");
+			    $('#email-tooltip').toggleClass('fail');
+			});
+		});
+	</script>
+
+	<!-- Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+	Page Caching using disk: enhanced -->
+	<iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="https://www.colbygilbert.com/scripts/saved_resource.html"></iframe>
+
+</html>
