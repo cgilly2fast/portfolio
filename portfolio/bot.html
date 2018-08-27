@@ -100,7 +100,7 @@
 					<div id="text-main" class="col-5 text-main">
 						<h1>Bitcoin Trading Bot</h1>
 						<p class="author">AWS Bot<span class="date">June 2018</span></p>
-						<p>I started this project in the midst of bitcoin's height in late 2017. My idea to make this bot was born out my troubled attempts to day trade.</p>
+						<p>I started this project at the height of bitcoin's prevalence in late 2017. My idea to make the Bitcoin Trading Bot was born out of my troubled attempts to day trade.</p>
 					</div>
 					<div id="img-main" class="col-7 align-c">
 						<img class="major preload" src="http://www.colbygilbert.com/portfolio/images/botcover.jpg" alt="robot piont at bitcoin logo">
@@ -114,7 +114,7 @@
 						<div class="col-12">
 							<div class="text-center nomargin">
 								<h2>Genesis</h2>	
-								<p>After making a bunch of mistake in my first few bitcoin trades, I realized if I had a bitcoin trading bot I could set up the trade rules and walk away. No matter what happens that bot will follow my rules. Automating the process and factoring out the human prone to making irrational decisions in the heat of the moment.</p>
+								<p>After making various mistakes in my first few Bitcoin trades, I realized if I had a Bitcoin Trading Bot I could set up the trade rules that I would abide by and walk away. No matter what happens, the bot would follow my predesigned rules. Automating the process and would eliminate the irrational decisions human are prone to make in the heat of the moment.</p>
 							</div>
 						</div>
 					</div>
@@ -124,17 +124,17 @@
 						<div class="col-12">
 							<div class="text-center nomargin">
 								<h2>Preplanning</h2>	
-								<p>To simplify matters I choose to initially develop the bot to exclusively trade BTC-USD on Gdax/Coinbase. This was beneficial because Coinbase has a well-defined and robust API. They also have a lesser know but powerful library called the Gdax Trading Toolkit, which I have contributed too.  My long-term plan is to move to more exchanges with more coin pairings.</p>
+								<p>To simplify matters, I chose to initially develop the bot to exclusively trade BTC-USD on Gdax/Coinbase. This was beneficial because Coinbase has a well-defined and robust API. They also have a lesser known, but powerful library called the Gdax Trading Toolkit, which I have contributed to. My long-term plan is to move to more exchanges with more coin pairings. My initial sizing up on what features I need for the project were as follows:</p>
 								<p>My initial sizing up of what features I need for the project were as follows:</p>
 								<ul class='ul'>
-									<li>Real time market data</li>
-									<li>Real time calculation of technical indicator values</li>
-									<li>Ability to know when my trades have been accepted</li>
-									<li>Tracking trade data for accounting and analysis purposes</li>
-									<li>Initialization process to ensure the bot is in sync with market data</li>
-									<li>Fail safes to handle errors and stop to prevent losing money from a fatality program</li>
+									<li>Real-time market data.</li>
+									<li>Real-time calculation of technical indicator values.</li>
+									<li>Ability to know when my trades have been accepted.</li>
+									<li>Tracking trade data for accounting and analysis purposes.</li>
+									<li>Initialization process to ensure the bot is in sync with market data.</li>
+									<li>Fail-safes to handle errors and stop trading to prevent losing money from a fatality program<./li>
 								</ul>
-								<p>The list felt quite daunting at first but I knew, like with any lofty project, I just needed to start and I will figure out the rest as I go. The three key challenge that arose as I developed where creating technical indicators, designing my database, and back testing my trading strategy. I discuss these in detail below.</p>
+								<p>While the list felt quite daunting at first,  I knew, as with any lofty project, I just needed to start somewhere figure out the rest as I go. The three key challenge arose as I developed were 1) creating technical indicators, 2) designing my database, and 3) backtesting my trading strategy. I discuss these in detail below.</p>
 							</div>
 						</div>
 					</div>
@@ -149,9 +149,9 @@
 						<div class="col-12">
 							<div class="text-center">
 								<h2>Technical Indicators</h2>
-								<p>I choose to start the project by creating the technical indicators. I knew wanted the MACD (Moving Average Convergence Divergence), CCI (Commodity Channel Index), and RSI (Relative Strength Index). Calculating these also require the SMA (Simple Moving Average) and EMA (Exponential Moving Average) for my trading strategy.</p> 
-								<p>I looked all over GitHub for a library that already had these built out in JavaScript but to no avail. After completing a few of them, I then found this technical indicator library (link). I somehow missed the exact type of library I was looking for two months prior. Although my version was optimized to my needs, I chose to switch to the new library. The new library had many features and 30+ indicators already built to be used immediately. I recognized this would minimize my future development cost when I wanted to add a new unforeseen feature.</p>
-								<p>Once I had a solid set of indicators to work with and expansive set of tools for making bots I was able to get a workable draft down quite quickly. This phase of the project forced me to learn NodeJS and Typescript.</p>
+								<p>I chose to start the project by creating the technical indicators. I knew wanted the MACD (Moving Average Convergence Divergence), CCI (Commodity Channel Index), and RSI (Relative Strength Index). Calculating these also require the SMA (Simple Moving Average) and EMA (Exponential Moving Average) for my trading strategy.</p> 
+								<p>I looked all over GitHub for a library that already had these built out in JavaScript but to no avail. After completing a few of them, I then found a technical indicator library (link). I discovered the exact type of library I was looking for two months prior. Although my version was optimized to my needs, I chose to switch to the new library. The new library had many features and over thirty indicators already built to be used immediately. I recognized this would minimize my future development cost when I wanted to add a new unforeseen feature.</p>
+								<p>Once I had a solid set of indicators to work with an expansive set of tools for making bots, I was able to quickly get a workable draft down. This phase of the project provided the opportunity to learn NodeJS and Typescript.</p>
 							</div>
 						</div>
 					</div>
@@ -161,8 +161,8 @@
 						<div class="col-12">
 							<div class="text-center">
 								<h2>Database Design</h2>
-								<p>The bot required a database to handle on the storage of trade data, historical data and Indicator values. I wrote up a schema for my database and meet up with a previous professor for review. He helped me figure out some implementation issue I was struggling with. First he recommends I remove all table that store indicator technical indicator values.</p> 
-								<p>He showed me if had a longer initialization process I could remove the waste of multiples table per indicator. Simplify the indicator table to one table that contained BTC-USD historical data. The second implementation issue the helped me solve is which DBMS I should use. I was undecided about using SQLite or a bigger DB like Azure. After eliminating my redundant tables, SQLite was the clear winner due to its ease of use and compatibility to a bot written in NodeJS. Here is my schema before our meeting and the schema that was implemented.</p>
+								<p>The bot required a database to handle the storage of trade data, historical data and Indicator values. I wrote up a schema for my database and met up with a previous professor for review. He assisted me with some implementation issues I was struggling with. First, he recommended that I remove all tables that store indicator technical indicator values.</p> 
+								<p>He also provided insight that if had a longer initialization process, I could remove the waste of multiples table per indicator and simplify the indicator table to one table that contained BTC-USD historical data. The second implementation issue we solved is which DBMS I should use. I was undecided about using SQLite or a bigger DB like Azure. After eliminating my redundant tables, SQLite was the clear winner due to its ease of use and compatibility to a bot written in NodeJS. Here is my schema before our meeting and the schema that was implemented.</p>
 							</div>
 						</div>
 					</div>
@@ -172,14 +172,14 @@
 						<div class="col-12">
 							<div class="text-center nomargin">
 								<h2>Back Testing</h2>	
-								<p>The final challenge was defining my winning trading strategy. At this point I tracked down historical data for bitcoin on Coinbase (2014 - Jan 2018) and created a SQLite table with the data (schema in link above). I then ran copious back tests and then saved the results in a different SQLite table for better analytics and tracking of results. Based on previous price action I wanted to optimize these key categories:</p>
+								<p>The final challenge was defining my winning trading strategy. At this point, I tracked down historical data for bitcoin on Coinbase (2014 - Jan 2018) and created a SQLite table with the data (schema in link above). I then ran copious backtests and saved the results in a different SQLite table for better analytics and improved tracking of results. Based on previous price action I wanted to optimize these key categories:</p>
 								<ul class='ul'>
 									<li>Time to exit a trade</li>
 									<li>What paring of indicator values yielded the highest results (on avg)</li>
 									<li>How to minimize losses when a trade goes against me</li>
 									<li>How to maximize the upside of a winning trade</li>
 								</ul>
-								<p>Then by changing the back test window, I tested how these changed based on different market conditions. Running one back test took about 5 minutes to complete because I usually ran tests on eight-month periods. Eight months of one-minute OHLC (Open High Low Close) candles is 20,736,000 data points. For each data point I calculated new indicator values and tested whether I would be entering, exiting or waiting for a trade opportunity, while tracking profitability. Below is a snapshot of the results I would get from a single test and how I compared the result across each test.</p>
+								<p>By changing the backtest window, I tested how these changed based on different market conditions. Running one backtest took about five minutes to complete because I usually ran tests on eight-month periods. Eight months of one-minute OHLC (Open High Low Close) candles is 20,736,000 data points. For each data point, I calculated new indicator values and tested whether I would be entering, exiting or waiting for a trade opportunity while tracking profitability. Below is a snapshot of the results I would get from a single test and how I compared the result across each test.</p>
 							</div>
 						</div>
 					</div>
@@ -189,7 +189,7 @@
 						<div class="col-12">
 							<div class="text-center">
 								<h2>Conclusion</h2>
-								<p>Although I have come up with a solid strategy for markets with a volatility of 4.5% or higher the current market is quite flat for day trading. So I have sideline the crypto bot and moved to making longer term three to six trades. Alas I have the code ready to go when the market becomes more bullish. Take a look at my code for everything on my GitHub.</p> 
+								<p>Although I have created a solid strategy for when market volatility is 4.5% or higher, the current market is quite flat for day trading. Thus, I have sidelined the crypto bot and moved to making longer-term three to six trades and I have the code ready to go when the market becomes more bullish. Take a look at my code for everything on my GitHub.</p> 
 							</div>
 						</div>
 					</div>
