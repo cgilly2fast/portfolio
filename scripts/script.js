@@ -1219,6 +1219,14 @@ $.fn.hoverThumb = function() {
 		});	 
 
 		// once the mouse leaves the whole thumbs div of project section
+		$('#thumbs').mouseleave(function(e){
+
+			// we reset the thumbs 
+			$('#thumbs li').stop().animate({'opacity':'1'}, 500);
+
+		});
+
+		// once the mouse leaves the whole thumbs div of project section
 		$('#personal #thumbs').mouseleave(function(e){
 
 			// we reset the thumbs 
