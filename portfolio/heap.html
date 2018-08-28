@@ -98,8 +98,8 @@
 				<div class="row">
 					<div id="text-main" class="col-5 text-main">
 						<h1>Three Heap</h1>
-						<p class="author">Java Development<span class="date">January 2017</span></p>
-						<p>Implemented a priority queue according to the PriorityQueue.java interface. My implementation was written in a file named <a href="./heap/ThreeHeap.java">ThreeHeap.java</a>, representing a three-heap.</p>
+						<p class="author">Class Work<span class="date">January 2017</span></p>
+						<p>Objective: Implement a priority queue according to the PriorityQueue.java interface. View my <a href="./heap/ThreeHeap.java">ThreeHeap.java</a>.</p>
 					</div>
 					<div id="img-main" class="col-7 align-c">
 						<img class="major preload" src="http://www.colbygilbert.com/portfolio/images/heapcover.jpg" alt="front view of bookshelf">
@@ -116,10 +116,10 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="text-center nomargin">
-								<h2>The process</h2>	
-								<p>My three-heap is a min heap like a binary heap, except that each element in the tree structure can have up to three children instead of 2 children. The challenge for this assignment was to maintain the structure property and the order property of heaps.</p>
-								<p>I implemented my <a href="./heap/ThreeHeap.java">ThreeHeap.java</a> as an array. The bench mark for the buildQueue operation was to run in, at slowest O(NLogN) time asymptotically. Although extra points were given for implementing buildQueue in O(N) time. I opted for the extra points, using Floyds Algorithm for achieving the O(N) runtime.</p>
-								<p>My implementation also grows and shrinks as the number of contents changes. To amortize this cost I resize the array by twice its previous size when full, and shrink the size by half when the array is 25% full.</p>
+								<h2>The Process</h2>	
+								<p>My three-heap is a min heap like a binary heap, except that each element in the tree structure can have up to three children instead of 2 children. The challenge for this assignment was to maintain the structure-property and the order property of heaps.</p>
+								<p>I implemented my <a href="./heap/ThreeHeap.java">ThreeHeap.java</a> as an array. The minimum benchmark for the buildQueue operation was to run, at slowest O(NLogN) time asymptotically. Extra credit was given for implementing the buildQueue in O(N) time. So I opted for the extra points, using Floyds Algorithm for achieving the O(N) runtime.</p>
+								<p>My implementation also grows and shrinks as the number of contents changes. To amortize this cost I resize the array by twice its previous size when full, and shrink the size by half when the array is 25% full (downward trending).</p>
 							</div>
 						</div>
 					</div>

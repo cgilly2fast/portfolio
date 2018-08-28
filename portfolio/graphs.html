@@ -98,8 +98,8 @@
 				<div class="row">
 					<div id="text-main" class="col-5 text-main">
 						<h1>Graphs &amp; Shortest Paths</h1>
-						<p class="author">Java Development<span class="date">February 2017</span></p>
-						<p>For this assignment, I developed a graph representation that implements Dijkstra's algorithm for finding shortest paths.</p>
+						<p class="author">Classwork<span class="date">February 2017</span></p>
+						<p>For this assignment, I implemented Dijkstra's algorithm for finding the shortest path on a graph representation.</p>
 					</div>
 					<div id="img-main" class="col-7 align-c">
 						<img class="major preload" src="./graphs/images/main.jpg" alt="front view of bookshelf">
@@ -116,14 +116,14 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="text-center nomargin">
-								<h2>The process</h2>	
-								<p>In this assignment, I created the classes <a href="./graphs/MyGraph.java">MyGraph.java</a>, <a href="./graphs/Edge.java">Edge.java</a>, and <a href="./graphs/Vertex.java">Vertex.java</a>. A big focus for this assignment was "protecting the graph abstraction" leveraging copy-in-copy-out and immutability. MyGraph has a method, shortestPath, that returns the lowest-cost path from its first argument to its second argument. Basic functionality includes:</p>
+								<h2>The Process</h2>	
+								<p>I created the classes:  <a href="./graphs/MyGraph.java">MyGraph.java</a>, <a href="./graphs/Edge.java">Edge.java</a>, and <a href="./graphs/Vertex.java">Vertex.java</a>. A major focus for this assignment was "protecting the graph’s abstraction" by leveraging copy-in-copy-out and immutability. MyGraph has a method, shortestPath, that returns the lowest-cost path from it’s first argument to the second argument. Basic functionality includes:</p>
 								<ul class='ul'>
 									<li>If there is no path, return null.</li>
 									<li>If the start and end vertex are equal, return a path containing one vertex and a cost of 0.</li>
 									<li>Otherwise, the path will contain at least two vertices -- the start and end vertices and any other vertices along the lowest-cost path. The vertices should be in the order they appear on the path.</li>
 								</ul>
-								<p>BBecause this graph implementation is directed and contains no negative-weight edges, I used Dijkstra’s Algorithm to implement the shortestPath method.</p>
+								<p>Because this graph representation was directed and contains no negative-weight edges, I choose to use Dijkstra’s Algorithm to implement the shortestPath method.</p>
 							</div>
 						</div>
 					</div>
