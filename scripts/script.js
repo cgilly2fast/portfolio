@@ -1205,47 +1205,36 @@ $.fn.hoverThumb = function() {
   	
 	// only animate for large desktop browsers
   	if($(window).width() >= 1140){
-
 	  	this.mouseenter(function(e){
-		
 			$(this).find('.arrow-r').hoverFlow(e.type, {opacity:1, right:15}, 500);
 			//$(this).hoverFlow(e.type, {opacity:1}, 300).siblings().hoverFlow(e.type, {opacity:0.3}, 300);
 			$(this).stop().animate({'opacity':'1'}, 300).siblings().stop().animate({'opacity':'0.4'}, 500);
-
 		}).mouseleave(function(e){
-
 			$(this).find('.arrow-r').hoverFlow(e.type, {opacity:0, right:0}, 500);
-
 		});	 
 
 		// once the mouse leaves the whole thumbs div of project section
 		$('#thumbs').mouseleave(function(e){
-
-			// we reset the thumbs 
+			//  reset the thumbs 
 			$('#thumbs li').stop().animate({'opacity':'1'}, 500);
-
 		});
 
 		// once the mouse leaves the whole thumbs div of project section
 		$('#personal #thumbs').mouseleave(function(e){
-
-			// we reset the thumbs 
+			// reset the thumbs 
 			$('#thumbs li').stop().animate({'opacity':'1'}, 500);
-
 		});
 		
 		// once the mouse leaves the whole thumbs div of  art section
 		$('#art #thumbs').mouseleave(function(e){
-
-			// we reset the thumbs 
+			// reset the thumbs 
 			$('#art #thumbs li').stop().animate({'opacity':'1'}, 500);
 
 		});	
 
 		// once the mouse leaves the whole thumbs div of  art section
 		$('#cs #thumbs').mouseleave(function(e){
-
-			// we reset the thumbs 
+			// reset the thumbs 
 			$('#cs #thumbs li').stop().animate({'opacity':'1'}, 500);
 
 		});
