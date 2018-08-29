@@ -100,7 +100,7 @@
 					<div id="text-main" class="col-5 text-main">
 						<h1>Bitcoin Trading Bot</h1>
 						<p class="author">AWS Bot<span class="date">June 2018</span></p>
-						<p>I started this project at the height of bitcoin's prevalence in late 2017. My idea to make the Bitcoin Trading Bot was born out of my troubled attempts to day trade.</p>
+						<p>I started this project at the height of bitcoin's prevalence in late 2017. My idea to make the Bitcoin Trading Bot was born out of my troubled attempts to day trade. View full code <a href="https://github.com/colbygilbert95/Bitcoin-Trading-Bot">here</a>.</p>
 					</div>
 					<div id="img-main" class="col-7 align-c">
 						<img class="major preload" src="http://www.colbygilbert.com/portfolio/images/botcover.jpg" alt="robot piont at bitcoin logo">
@@ -142,7 +142,7 @@
 									<li>Initialization process to ensure the bot is in sync with market data.</li>
 									<li>Fail-safes to handle errors and stop trading to prevent losing money from a fatality program.</li>
 								</ul>
-								<p>While the list felt quite daunting at first,  I knew, as with any lofty project, I just needed to start somewhere figure out the rest as I go. The three key challenge arose as I developed were 1) creating technical indicators, 2) designing my database, and 3) backtesting my trading strategy. I discuss these in detail below.</p>
+								<p>While the list felt quite daunting at first, I start with writing out some <a href="https://github.com/colbygilbert95/Bitcoin-Trading-Bot/blob/master/overviewPseudoCode.txt">pseudo code</a> (above) to clarify how the bot would run. The three key challenge arose as I developed were 1) creating technical indicators, 2) designing my database, and 3) backtesting my trading strategy. I discuss these in detail below.</p>
 							</div>
 						</div>
 					</div>
@@ -157,8 +157,8 @@
 						<div class="col-12">
 							<div class="text-center">
 								<h2>Technical Indicators</h2>
-								<p>I chose to start the project by creating the technical indicators. I knew wanted the MACD (Moving Average Convergence Divergence), CCI (Commodity Channel Index), and RSI (Relative Strength Index). Calculating these also require the SMA (Simple Moving Average) and EMA (Exponential Moving Average) for my trading strategy.</p> 
-								<p>I looked all over GitHub for a library that already had these built out in JavaScript but to no avail. After completing a few of them, I then found a technical indicator library (link). I discovered the exact type of library I was looking for two months prior. Although my version was optimized to my needs, I chose to switch to the new library. The new library had many features and over thirty indicators already built to be used immediately. I recognized this would minimize my future development cost when I wanted to add a new unforeseen feature.</p>
+								<p>I chose to start the project by creating the technical indicators. I knew wanted the <a href="https://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd">MACD (Moving Average Convergence Divergence)</a>, <a href="https://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:commodity_channel_index_cci">CCI (Commodity Channel Index)</a>, and <a href="https://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi">RSI (Relative Strength Index)</a>. Calculating these also require the <a href="https://www.investopedia.com/terms/s/sma.asp">SMA (Simple Moving Average)</a> and <a href="https://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_averages">EMA (Exponential Moving Average)</a> for my trading strategy.</p> 
+								<p>I looked all over GitHub for a library that already had these built out in JavaScript but to no avail. After completing a few of them (view code <a hef="https://github.com/colbygilbert95/Bitcoin-Trading-Bot/tree/master/custom-indicators">here</a>), I then found this technical indicator library. I discovered the exact type of library I was looking for two months prior. Although my version was optimized to my needs, I chose to switch to the new library. The new library had many features and over thirty indicators already built to be used immediately. I recognized this would minimize my future development cost when I wanted to add a new unforeseen feature. Above is <a href="https://github.com/colbygilbert95/Bitcoin-Trading-Bot/blob/master/custom-indicators/Indicator.ts">Indicator.ts</a>, an interface I created to implement my various indicators. </p>
 								<p>Once I had a solid set of indicators to work with an expansive set of tools for making bots, I was able to quickly get a workable draft down. This phase of the project provided the opportunity to learn NodeJS and Typescript.</p>
 							</div>
 						</div>
@@ -175,7 +175,7 @@
 							<div class="text-center">
 								<h2>Database Design</h2>
 								<p>The bot required a database to handle the storage of trade data, historical data and Indicator values. I wrote up a schema for my database and met up with a previous professor for review. He assisted me with some implementation issues I was struggling with. First, he recommended that I remove all tables that store indicator technical indicator values.</p> 
-								<p>He also provided insight that if had a longer initialization process, I could remove the waste of multiples table per indicator and simplify the indicator table to one table that contained BTC-USD historical data. The second implementation issue we solved is which DBMS I should use. I was undecided about using SQLite or a bigger DB like Azure. After eliminating my redundant tables, SQLite was the clear winner due to its ease of use and compatibility to a bot written in NodeJS. Here is my schema before our meeting and the schema that was implemented.</p>
+								<p>He also provided insight that if had a longer initialization process, I could remove the waste of multiples table per indicator and simplify the indicator table to one table that contained BTC-USD historical data. The second implementation issue we solved is which DBMS I should use. I was undecided about using SQLite or a bigger DB like Azure. After eliminating my redundant tables, SQLite was the clear winner due to its ease of use and compatibility to a bot written in NodeJS. Above is the entity relationship diagram of my schema before our meeting. View full database code <a href="https://github.com/colbygilbert95/Bitcoin-Trading-Bot/tree/master/db-design">here</a>.</p>
 							</div>
 						</div>
 					</div>
