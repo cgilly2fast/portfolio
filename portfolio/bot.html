@@ -114,7 +114,7 @@
 						<div class="col-12">
 							<div class="text-center nomargin">
 								<h2>Genesis</h2>	
-								<p>After making various mistakes in my first few Bitcoin trades, I realized if I had a Bitcoin Trading Bot I could set up the trade rules that I would abide by and walk away. No matter what happens, the bot would follow my predesigned rules. Automating the process and would eliminate the irrational decisions human are prone to make in the heat of the moment.</p>
+								<p>After making various mistakes in my first few bitcoin trades, I realized if I had a Bitcoin Trading Bot I could set up the trade rules that I would abide by and walk away. No matter what happens, the bot would follow my predesigned rules. Automating the process and would eliminate the irrational decisions human are prone to make in the heat of the moment.</p>
 							</div>
 						</div>
 					</div>
@@ -132,7 +132,7 @@
 						<div class="col-12">
 							<div class="text-center nomargin">
 								<h2>Preplanning</h2>	
-								<p>To simplify matters, I chose to initially develop the bot to exclusively trade BTC-USD on Gdax/Coinbase. This was beneficial because Coinbase has a well-defined and robust API. They also have a lesser known, but powerful library called the Gdax Trading Toolkit, which I have contributed to. My long-term plan is to move to more exchanges with more coin pairings. My initial sizing up on what features I need for the project were as follows:</p>
+								<p>To simplify matters, I chose to initially develop the bot to exclusively trade BTC-USD on Gdax/Coinbase. This was beneficial because Coinbase has a well-defined and robust API. They also have a lesser known, but powerful, library called the Gdax Trading Toolkit, which I have contributed to. My long-term plan is to move to more exchanges with more coin pairings. My initial sizing up on what features I needed for the project were as follows:</p>
 								<p>My initial sizing up of what features I need for the project were as follows:</p>
 								<ul class='ul'>
 									<li>Real-time market data.</li>
@@ -142,7 +142,7 @@
 									<li>Initialization process to ensure the bot is in sync with market data.</li>
 									<li>Fail-safes to handle errors and stop trading to prevent losing money from a fatality program.</li>
 								</ul>
-								<p>While the list felt quite daunting at first, I start with writing out some <a href="https://github.com/colbygilbert95/Bitcoin-Trading-Bot/blob/master/overviewPseudoCode.txt">pseudo code</a> (above) to clarify how the bot would run. The three key challenge arose as I developed were 1) creating technical indicators, 2) designing my database, and 3) backtesting my trading strategy. I discuss these in detail below.</p>
+								<p>While the list felt quite daunting at first, I started with writing out some <a href="https://github.com/colbygilbert95/Bitcoin-Trading-Bot/blob/master/overviewPseudoCode.txt">pseudo code</a> (above) to clarify how the bot would run. The three key challenges that arose as I developed were 1) creating technical indicators, 2) designing my database, and 3) backtesting my trading strategy. I discuss these in detail below.</p>
 							</div>
 						</div>
 					</div>
@@ -174,8 +174,8 @@
 						<div class="col-12">
 							<div class="text-center">
 								<h2>Database Design</h2>
-								<p>The bot required a database to handle the storage of trade data, historical data and Indicator values. I wrote up a schema for my database and met up with a previous professor for review. He assisted me with some implementation issues I was struggling with. First, he recommended that I remove all tables that store indicator technical indicator values.</p> 
-								<p>He also provided insight that if had a longer initialization process, I could remove the waste of multiples table per indicator and simplify the indicator table to one table that contained BTC-USD historical data. The second implementation issue we solved is which DBMS I should use. I was undecided about using SQLite or a bigger DB like Azure. After eliminating my redundant tables, SQLite was the clear winner due to its ease of use and compatibility to a bot written in NodeJS. Above is the entity relationship diagram of my schema before our meeting. View full database code <a href="https://github.com/colbygilbert95/Bitcoin-Trading-Bot/tree/master/db-design">here</a>.</p>
+								<p>The bot required a database to handle the storage of trade data, historical data, and Indicator values. I wrote up a schema for my database and met up with a previous professor for review. He assisted me with some implementation issues I was struggling with. First, he recommended that I remove all tables that store indicator technical indicator values.</p> 
+								<p>He also provided insight that if had a longer initialization process, I could remove the waste of multiples table per indicator and simplify the indicator table to one table that contained BTC-USD historical data. The second implementation issue we solved is which DBMS I should use. I was undecided about using SQLite or a bigger DB, like Azure. After eliminating my redundant tables, SQLite was the clear winner due to its ease of use and compatibility to a bot written in NodeJS. Above is the entity relationship diagram of my schema before our meeting. View full database code <a href="https://github.com/colbygilbert95/Bitcoin-Trading-Bot/tree/master/db-design">here</a>.</p>
 							</div>
 						</div>
 					</div>
@@ -190,14 +190,14 @@
 						<div class="col-12">
 							<div class="text-center nomargin">
 								<h2>Back Testing</h2>	
-								<p>The final challenge was defining my winning trading strategy. At this point, I tracked down historical data for bitcoin on Coinbase (2014 - Jan 2018) and created a SQLite table with the data (schema in link above). I then ran copious backtests and saved the results in a different SQLite table for better analytics and improved tracking of results. Based on previous price action I wanted to optimize these key categories:</p>
+								<p>The final challenge was defining my winning trading strategy. At this point, I tracked down historical data for bitcoin on Coinbase (2014 - Jan 2018) and created a SQLite table with the data (schema in link above). I then ran copious backtests and saved the results in a different SQLite table for better analytics and improved tracking of results. Based on previous price action, I wanted to optimize these key categories:</p>
 								<ul class='ul'>
-									<li>Time to exit a trade</li>
-									<li>What paring of indicator values yielded the highest results (on avg)</li>
-									<li>How to minimize losses when a trade goes against me</li>
-									<li>How to maximize the upside of a winning trade</li>
+									<li>Time to exit a trade.</li>
+									<li>What paring of indicator values yielded the highest results (on average).</li>
+									<li>How to minimize losses when a trade goes against me.</li>
+									<li>How to maximize the upside of a winning trade.</li>
 								</ul>
-								<p>By changing the backtest window, I tested how these changed based on different market conditions. Running one backtest took about five minutes to complete because I usually ran tests on eight-month periods. Eight months of one-minute OHLC (Open High Low Close) candles is 20,736,000 data points. For each data point, I calculated new indicator values and tested whether I would be entering, exiting or waiting for a trade opportunity while tracking profitability. Below is a snapshot of the results I would get from a single test and how I compared the result across each test.</p>
+								<p>By changing the backtest window, I tested how these changed based on different market conditions. Running one backtest took about five minutes to complete because I usually ran tests on eight-month periods. Eight months of one-minute OHLC (Open High Low Close) candles is 20,736,000 data points. For each data point, I calculated new indicator values and tested whether I would be entering, exiting, or waiting for a trade opportunity while tracking profitability. Below is a snapshot of the results I would get from a single test and how I compared the result across each test.</p>
 							</div>
 						</div>
 					</div>
@@ -207,7 +207,7 @@
 						<div class="col-12">
 							<div class="text-center">
 								<h2>Conclusion</h2>
-								<p>Although I have created a solid strategy for when market volatility is 4.5% or higher, the current market is quite flat for day trading. Thus, I have sidelined the crypto bot and moved to making longer-term three to six trades and I have the code ready to go when the market becomes more bullish. Take a look at my code for everything on my GitHub.</p> 
+								<p>Although I have created a solid strategy for when market volatility is 4.5% or higher, the current market is quite flat for day trading. Thus, I have sidelined the crypto bot and moved to making longer-term three to six trades and I have the code ready to go when the market becomes more bullish. Take a look at my code for everything on my <a href="https://github.com/colbygilbert95/Bitcoin-Trading-Bot">GitHub</a>.</p> 
 							</div>
 						</div>
 					</div>
