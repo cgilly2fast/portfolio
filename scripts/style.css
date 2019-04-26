@@ -868,9 +868,9 @@ img.shadow {
 .favicons li .marked-lines {
   background-position: 0px -704px;
 }
-.favicons li .92-pixels {
+/* .favicons li .92-pixels {
   background-position: 0px -720px;
-}
+} */
 .favicons li .psd-collector {
   background-position: 0px -736px;
 }
@@ -910,9 +910,9 @@ img.shadow {
 .favicons li .omega-imagine {
   background-position: 0px -928px;
 }
-.favicons li .3lancer {
+/* .favicons li .3lancer {
   background-position: 0px -944px;
-}
+} */
 .favicons li .curiosando {
   background-position: 0px -960px;
 }
@@ -2318,7 +2318,7 @@ button:active,
     background-position: -96px -186px;
   }
   .social .email a {
-  background-position: -11px -757px;
+    background-position: -11px -757px;
   }
   .social .github a {
   background-position: 1px -791px;
@@ -2628,7 +2628,7 @@ button:active,
   .prev,
   .next a,
   .prev a {
-    background-image: url(./sprite@2x.png);
+    background-image: url(./sprite.png);
     background-size: 150px 1200px;
   }
 }
@@ -2636,7 +2636,7 @@ button:active,
 @media only screen and (min-width: 668px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: 668px) and (min--moz-device-pixel-ratio: 1.5), only screen and (min-width: 668px) and (min-device-pixel-ratio: 1.5) {
   .logo,
   .social li a {
-    background-image: url(./sprite@2x.png);
+    background-image: url(./sprite.png);
     background-size: 150px 1200px;
   }
 }
